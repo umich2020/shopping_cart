@@ -1,6 +1,13 @@
 # shopping_cart
 shopping cart/ecommerce store for the odin project
 
+### notes
+-I realize this too late but we probably need a page, a child component
+where the route(and I imagine we just create another router on main or pull
+the informatiion up via states until main). For the api info we pull,
+this is to add information, like a description, although the api doesn't provide it
+so we can't but I would image we would for a real commerce site
+
 Components:
     * navbar
     * home page 
