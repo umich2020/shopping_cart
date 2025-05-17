@@ -19,7 +19,7 @@ Components:
         * component of checkout with info on sum. Props are item and price and quantity
 steps
 1) figma-done. therefore we understand the funcitonality we need and all the main components we need for each that we'll reuse
-2) create navbar and get it to go between the two pages. use tests
+2) create navbar and get it to go between the two pages. use tests-done(no need for tests)
 3) use test driven development here, i want to learn test for ui in react
     a. click on navbar(wait specs say devs have already done so)
     b. clicking on menu item increment increases total items by 1 and lower increase price
