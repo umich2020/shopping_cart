@@ -3,8 +3,8 @@ import { useLocation } from "react-router-dom"
 export function ShoppingPage(){
     const location = useLocation()
     let info = location.state
-    console.log('info is')
-    console.log(info)
+    // console.log('info is')
+    // console.log(info)
     return(
         <>
                 <Navbar/>

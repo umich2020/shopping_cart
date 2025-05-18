@@ -8,14 +8,43 @@ export function OrderPage() {
     https://www.themealdb.com/api/json/v1/1/search.php?s=
 
     */
-  const [orders, setOrders] = useState([["temp", 2]]);
-  function click() {
-    setOrders([...orders, ["number2", 1]]);
+  const [orders, setOrders] = useState([
+    ["temp", 2],
+    ["temp2", 0],
+    ["Vegan Chocolate Cake", 3],
+  ]);
+  const [menuItems, setMenuItems] = useState([
+    "Vegan Chocolate Cake",
+    "Chocolate Bread",
+  ]);
+  function increaseCount(name) {
+    const newOrders = orders.map((order) => {
+      if (order[0] === name) {
+        return [order[0], order[1] + 1];
+      } else {
+        return order;
+      }
+    });
+    setOrders(newOrders);
+  }
+  function decreaseCount(name) {
+    const newOrders = orders.map((order) => {
+      if (order[0] === name) {
+        if(order[1]<=0){
+            alert("you can't decrease more than 0")
+            return order
+        } else {
+            return [order[0], order[1] - 1];
+        }
+      } else {
+        return order;
+      }
+    });
+    setOrders(newOrders);
   }
   return (
     <>
       <Navbar data={orders} />
-      <button onClick={click}>Click me!</button>
       {orders.map((item) => {
         return (
           <>
@@ -25,7 +54,16 @@ export function OrderPage() {
         );
       })}
       <h1>We got yummy food!</h1>
-      <Item url_param="Vegan%20Chocolate%20Cake" />
+      {menuItems.map((item) => {
+        return (
+          <Item
+            increaseCount={increaseCount}
+            decreaseCount={decreaseCount}
+            url_param={encodeURI(item)}
+            name={item}
+          />
+        );
+      })}
     </>
   );
 }
