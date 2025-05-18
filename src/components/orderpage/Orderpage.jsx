@@ -42,6 +42,35 @@ export function OrderPage() {
     });
     setOrders(newOrders);
   }
+  function submitCount(name,quantity) {
+    const valueInArr=orders.find((item)=>item[0]===name)
+    // console.log('console log message')
+    // console.log(valueInArr)
+    // console.log(name)
+    // console.log(orders)
+    if (valueInArr){
+      console.log('this returns true')
+    //   const newOrders = orders.map((order) => {
+    //   if (order[0] === name) {
+    //     return [order[0], quantity];
+    //   } else {
+    //     return order;
+    //   }
+    // });
+    // setOrders(newOrders);
+      console.log(orders)
+
+    } else {
+      console.log('this returns flsae')
+      setOrders((prev)=>([...prev,[name,quantity]]))
+      console.log(orders)
+    }
+    //if yes then update it's value
+    //if no then set up a new value
+    //we're running into an infinite loop issue
+  }
+  submitCount("temp2dsaf",3)
+  submitCount("temp",69)
   return (
     <>
       <Navbar data={orders} />
