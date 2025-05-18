@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 
-export function Navbar(){
-
+export function Navbar(data){
+    const info = data
     return (
         <>
         <ul>
@@ -12,7 +12,7 @@ export function Navbar(){
             <Link to="/shopping">Order</Link>
             </li>
                         <li>
-            <Link to="/checkout">Checkout</Link>
+            <Link to="/checkout" state={info.data}>Checkout</Link>
             </li>
         </ul>
         </>
