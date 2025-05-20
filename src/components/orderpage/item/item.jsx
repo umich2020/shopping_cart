@@ -3,6 +3,7 @@ export function Item({
   url_param,
   name = "no food",
   submitFn,
+  price,
 }) {
   const [imageSrc, setImageSrc] = useState("null");
   const [count, setCount] = useState(0)
@@ -22,28 +23,31 @@ export function Item({
   getImgUrl();
   function decreaseCount(){
     if(count > 0) {
-    setCount((n)=>n-1)
+    setCount((n)=>parseInt(n)-1)
 
     }
   }
     function increaseCount(){
     setCount((n)=>parseInt(n)+1)
   }
+  function errorAlert(message){
+    alert(message)
+  }
   function handleSubmit(event) {
     event.preventDefault();
     if(count < 0){
         setCount(0)
-        alert("submitted value must be greater than 0")
+        errorAlert("submitted value must be greater than 0")
         return
     }
     const input_value = event.target.elements[1].value;
     // console.log(input_value);
     // console.log(event.target.elements[1].name)
     const item_name = event.target.elements[1].name
-    submitFn(item_name,input_value)
+    submitFn(item_name,input_value,price)
   }
   function inputError(){
-    alert("you're value must be a number, greater than 0")
+    errorAlert("you're value must be a number, greater than 0")
     setCount(0)
   }
   function handleChange(e){
@@ -54,13 +58,14 @@ export function Item({
   }
   //checks console log of updated states
       useEffect(()=>{
-    console.log(count)
+    // console.log(count)
 
     },[count])
   return (
     <>
       <img src={imageSrc} alt="no url was provided" />
       <p>{name}</p>
+      <p>{"$"+ price}</p>
       <div id="+/-">
         <form onSubmit={(event) => handleSubmit(event, name + "_input")}>
           <button type='button' onClick={() => decreaseCount(name)}>-</button>
