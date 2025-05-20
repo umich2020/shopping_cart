@@ -27,7 +27,8 @@ steps
     d. change input and it should do so approrpiately. Do not allow anything besides number(numbers cannot be negative and maybe we should do a limit)
 4) in shopping page we create menu item component
 4a) we fetch the image api from https://github.com/surhud004/Foodish#readme
-5) create a checkout page with totals, and a submit button(which does nothing)
+5) create a checkout page with totals, and a submit button(which does nothing).
+Done, we're not doing images cuz it's a restuarant and I'm lazy
 6) Fill out page of normal content
 7) CSS! work on our css animation and styling skills.
 7a) external fonts

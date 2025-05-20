@@ -1,0 +1,21 @@
+.items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hr,
+.br {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+.hr {
+  width: 70vw;
+}
+.br {
+  width: 100vw;
+  border-top: 3px solid #000;
+}

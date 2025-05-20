@@ -1,6 +1,7 @@
 import { Navbar } from "../navbar/Navbar";
 import { Item } from "./item/item";
 import { useState } from "react";
+import './style.css'
 export function OrderPage() {
   //items
   //entree mac&cheese
@@ -90,7 +91,7 @@ export function OrderPage() {
   return (
     <>
       <Navbar data={orders} />
-      {orders.map((item) => {
+      {/* {orders.map((item) => {
         return (
           <>
             <p>Item is:{item[0]}</p>
@@ -98,8 +99,9 @@ export function OrderPage() {
             <p>Price is: ${item[2]}</p>
           </>
         );
-      })}
+      })} */}
       <h1>We got yummy food!</h1>
+      <div id='foods'>
       {menuItems.map((item) => {
         return (
           <Item
@@ -110,6 +112,7 @@ export function OrderPage() {
           />
         );
       })}
+      </div>
     </>
   );
 }

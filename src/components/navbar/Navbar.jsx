@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import './style.css'
 
 export function Navbar(data){
     const info = data

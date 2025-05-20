@@ -1,0 +1,10 @@
+#totals {
+  text-align: right;
+}
+.button {
+  --width: 30vw;
+  width: var(--width);
+  height: 3em;
+  position: absolute;
+  right: calc(50vw - var(--width) / 2);
+}
