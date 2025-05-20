@@ -3,9 +3,16 @@ ul {
   grid-template-columns: 1fr 1fr 1fr;
   list-style-type: none;
   text-decoration: none;
+  padding: 0;
+  justify-items: center;
+  align-items: center;
+  border: 2px black solid;
 }
 a {
   text-decoration: none;
   font-size: 2em;
   color: black;
+}
+.navbar {
+  background-color: #ff3b3b;
 }

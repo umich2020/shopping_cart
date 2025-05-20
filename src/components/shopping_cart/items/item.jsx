@@ -2,6 +2,7 @@ import "./style.css";
 
 export function Item({ name, quantity, price }) {
   const subTotal = quantity * parseFloat(price);
+
   return (
     <>
       <div class="items">
