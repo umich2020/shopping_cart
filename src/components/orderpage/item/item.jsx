@@ -4,6 +4,7 @@ export function Item({
   name = "no food",
   increaseCount,
   decreaseCount,
+  submitFn,
 }) {
   const [imageSrc, setImageSrc] = useState("null");
   let url = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + url_param;
@@ -25,6 +26,7 @@ export function Item({
     event.preventDefault();
     const input_value = event.target.elements[1].value;
     console.log(input_value);
+    submitFn("temp2dsaf",3)
   }
   function inputError(){
     alert("you're value must be a number, greater than 0")
