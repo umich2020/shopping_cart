@@ -10,13 +10,20 @@ export function OrderPage() {
 
     */
   const [orders, setOrders] = useState([
-    ["temp", 2, 1.99],
-    ["temp2", 0, 2.1],
+    ["Spicy Arrabiata Penne", 1, 2.1],
     ["Vegan Chocolate Cake", 3, 3.5],
   ]);
   const [menuItems, setMenuItems] = useState([
-    ["Vegan Chocolate Cake",3.5],
-    ["Chocolate Bread",2]
+
+    ["Spicy Arrabiata Penne",12.50],
+    ["Vegan Lasagna",12],
+    ["Fettuccine Alfredo",10.99],
+    ["Lamb Pilaf (Plov)",14],
+    ["Big Mac",8.99],
+    ["Lamb Tzatziki Burgers",9.50],
+        ["Vegan Chocolate Cake",8],
+    ["Bread and Butter Pudding",6.50],
+    ["Madeira Cake",7],
   ]);
   function increaseCount(name) {
     //this is for shopping cart

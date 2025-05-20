@@ -57,7 +57,7 @@ export function Item({ url_param, name = "no food", submitFn, price }) {
     // console.log(count)
   }, [count]);
   return (
-    <>
+    <div className="item">
       <img src={imageSrc} alt="no url was provided" />
       <p>{name}</p>
       <p>{"$" + price}</p>
@@ -72,8 +72,8 @@ export function Item({ url_param, name = "no food", submitFn, price }) {
           -
           </button>
           <div class='middle'>
-          <p>Type/use buttons to signal how much you want</p>
-          <input
+          <p>Type/use buttons to submit  how much you want</p>
+          <input className="food_input"
             placeholder="Type number. Min 0"
             name={name}
             type="number"
@@ -95,6 +95,6 @@ export function Item({ url_param, name = "no food", submitFn, price }) {
           <button class='submit'type="submit">Add to order</button>
         </form>
       </div>
-    </>
+    </div>
   );
 }
