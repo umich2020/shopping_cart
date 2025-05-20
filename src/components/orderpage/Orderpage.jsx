@@ -41,6 +41,8 @@ export function OrderPage() {
       }
     });
     setOrders(newOrders);
+    //update I realized this is for the checkout, not really for increasing the 
+    //submit count
   }
   function submitCount(name,quantity) {
     const valueInArr=orders.find((item)=>item[0]===name)
