@@ -17,7 +17,7 @@ export function OrderPage() {
     "Vegan Chocolate Cake",
     "Chocolate Bread",
   ]);
-  function increaseCount(name) {//will have to redo this
+  function increaseCount(name) {//this is for shopping cart
     const newOrders = orders.map((order) => {
       if (order[0] === name) {
         return [order[0], order[1] + 1];
@@ -27,7 +27,7 @@ export function OrderPage() {
     });
     setOrders(newOrders);
   }
-  function decreaseCount(name) {
+  function decreaseCount(name) {//this is for shopping cart
     const newOrders = orders.map((order) => {
       if (order[0] === name) {
         if(order[1]<=0){
@@ -135,8 +135,6 @@ export function OrderPage() {
       {menuItems.map((item) => {
         return (
           <Item
-            increaseCount={increaseCount}
-            decreaseCount={decreaseCount}
             submitFn={submitCount}
             url_param={encodeURI(item)}
             name={item}

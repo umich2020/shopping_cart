@@ -1,12 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 export function Item({
   url_param,
   name = "no food",
-  increaseCount,
-  decreaseCount,
   submitFn,
 }) {
   const [imageSrc, setImageSrc] = useState("null");
+  const [count, setCount] = useState(0)
   let url = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + url_param;
   async function getImgUrl() {
     const response = await fetch(url, { mode: "cors" });
@@ -21,32 +20,62 @@ export function Item({
     });
   }
   getImgUrl();
+  function decreaseCount(){
+    if(count > 0) {
+    setCount((n)=>n-1)
 
+    }
+  }
+    function increaseCount(){
+    setCount((n)=>parseInt(n)+1)
+  }
   function handleSubmit(event) {
     event.preventDefault();
+    if(count < 0){
+        setCount(0)
+        alert("submitted value must be greater than 0")
+        return
+    }
     const input_value = event.target.elements[1].value;
-    console.log(input_value);
-    submitFn("temp2dsaf",3)
+    // console.log(input_value);
+    // console.log(event.target.elements[1].name)
+    const item_name = event.target.elements[1].name
+    submitFn(item_name,input_value)
   }
   function inputError(){
     alert("you're value must be a number, greater than 0")
+    setCount(0)
   }
+  function handleChange(e){
+    setCount(()=>e.target.value)
+    if(count < 0){
+       setCount(0)
+    }
+  }
+  //checks console log of updated states
+      useEffect(()=>{
+    console.log(count)
+
+    },[count])
   return (
     <>
       <img src={imageSrc} alt="no url was provided" />
       <p>{name}</p>
       <div id="+/-">
         <form onSubmit={(event) => handleSubmit(event, name + "_input")}>
-          <button onClick={() => decreaseCount(name)}>-</button>
+          <button type='button' onClick={() => decreaseCount(name)}>-</button>
           <p>Type/use buttons to signal how much you want</p>
           <input
             placeholder="Type number. Min 0"
-            name={name + "_input"}
-            type="text"
-            pattern="[0-9]*"
+            name={name}
+            type='number'
+            // type="text"
+            // pattern="[0-9]*"
             onInvalid={inputError}
+            onChange={handleChange}
+            value={count}
           />
-          <button onClick={() => increaseCount(name)}>+</button>
+          <button type="button" onClick={increaseCount}>+</button>
           <button type="submit">Add to order</button>
         </form>
       </div>
