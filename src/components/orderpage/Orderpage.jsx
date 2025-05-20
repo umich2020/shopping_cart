@@ -84,7 +84,9 @@ export function OrderPage() {
       // console.log(orders)
     }
   }
-
+  // console.log("the state is")
+  // console.log(typeof menuItems)
+  
   return (
     <>
       <Navbar data={orders} />

@@ -24,7 +24,6 @@ export function Item({
   function decreaseCount(){
     if(count > 0) {
     setCount((n)=>parseInt(n)-1)
-
     }
   }
     function increaseCount(){
