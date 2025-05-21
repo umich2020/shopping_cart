@@ -5,7 +5,7 @@ export function Navbar(data) {
   const info = data;
   return (
     <>
-      <ul class="navbar">
+      <ul className="navbar">
         <li>
           <Link to="/">Home</Link>
         </li>

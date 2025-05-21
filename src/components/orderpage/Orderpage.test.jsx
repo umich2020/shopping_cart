@@ -14,9 +14,11 @@ describe("Clear button",()=>{
       </BrowserRouter>
     );
 
-        render(<OrderPage/>)
-        const button = screen.getByRole("button", {name: "Clear cart"})
+        // render(<OrderPage/>)
+                const button = screen.getByRole("button", {name: "Clear Cart"})
+
+        // const button = screen.getByRole("button", {id: "Clear cart"})
         await user.click(button)
-        expect(screen.getByRole("button", {name: "Clear cart"}).textContent).toMatch(/Cart is cleared/i)
+        expect(screen.getByRole("button", {name: "Cart is cleared"}).textContent).toMatch(/Cart is cleared/i)
     })
 })
