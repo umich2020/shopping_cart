@@ -1,6 +1,6 @@
 import { Navbar } from "../navbar/Navbar";
 import { Item } from "./item/item";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import './style.css'
 export function OrderPage() {
   //items
@@ -25,35 +25,7 @@ export function OrderPage() {
     ["Bread and Butter Pudding",6.50],
     ["Madeira Cake",7],
   ]);
-  function increaseCount(name) {
-    //this is for shopping cart
-    const newOrders = orders.map((order) => {
-      if (order[0] === name) {
-        return [order[0], order[1] + 1];
-      } else {
-        return order;
-      }
-    });
-    setOrders(newOrders);
-  }
-  function decreaseCount(name) {
-    //this is for shopping cart
-    const newOrders = orders.map((order) => {
-      if (order[0] === name) {
-        if (order[1] <= 0) {
-          alert("you can't decrease more than 0"); //yes you can you just remove it
-          return order;
-        } else {
-          return [order[0], order[1] - 1];
-        }
-      } else {
-        return order;
-      }
-    });
-    setOrders(newOrders);
-    //update I realized this is for the checkout, not really for increasing the
-    //submit count
-  }
+
   function submitCount(name, quantity,price) {
     // console.log('this is orders before anything')
     // console.log(orders)
@@ -94,7 +66,17 @@ export function OrderPage() {
   }
   // console.log("the state is")
   // console.log(typeof menuItems)
-  
+  function clear(e){
+    setOrders([])
+    e.target.textContent = "Cart is cleared"
+    console.log(e.target.textContent)
+  }
+  useEffect(()=>{
+    const button_text = document.querySelector("#clear")
+    if(orders.length !=0){
+      button_text.textContent = "Clear Cart"      
+    }
+  },[orders])
   return (
     <>
       <Navbar data={orders} />
@@ -108,6 +90,7 @@ export function OrderPage() {
         );
       })} */}
       <h1>We got yummy food!</h1>
+      <button id="clear" type='button' onClick={clear}>Clear cart</button>
       <div id='foods'>
       {menuItems.map((item) => {
         return (
