@@ -76,6 +76,7 @@ export function HomePage() {
         <h4>
           Phone: <p>123-123-1234</p>
         </h4>
+        <p>Don't click on socials :)</p>
         <img onClick={redirect} className="socials" src={FB} alt="FB logo" />
         <img onClick={redirect} className="socials" src={Insta} alt="IG logo" />
         <img
