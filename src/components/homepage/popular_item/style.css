@@ -5,4 +5,11 @@
 }
 .pop_items{
     font-size: 1.5em;
+    background-color: #ebeccf;
+    padding: 4px;
+    border-radius: 8px;
+    transition: transform .25s ;
+}
+.pop_items:hover {
+    transform: scale(1.25);
 }

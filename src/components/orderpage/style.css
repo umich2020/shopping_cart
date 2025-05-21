@@ -15,3 +15,12 @@ button {
   opacity: 1;
   visibility: visible;
 }
+.hoverHide {
+      color: #000;
+    background-color: #ebeccf;
+    border: none;
+    border-radius: 8px;
+}
+.order_page {
+  padding: 12px;
+}

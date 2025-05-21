@@ -51,3 +51,15 @@ img {
 input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
+.submit, .inc_dec_button, .food_input{
+    color: #000;
+    background-color: #ebeccf;
+    border: none;
+    border-radius: 8px;
+}
+.submit {
+    margin-top: 4px;
+}
+.food_input {
+    height: 20px;
+}

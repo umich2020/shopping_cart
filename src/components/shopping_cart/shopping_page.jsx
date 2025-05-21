@@ -28,7 +28,7 @@ export function ShoppingPage() {
     alert("you have paid $" + total);
   }
   return (
-    <>
+    <div className="checkout_page">
       <Navbar />
       <h1>Checkout</h1>
       {shopping_data.map((item) => {
@@ -43,6 +43,6 @@ export function ShoppingPage() {
       <button class="button" type="button" onClick={Pay}>
         {"Pay $" + total}
       </button>
-    </>
+    </div>
   );
 }

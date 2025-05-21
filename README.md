@@ -31,10 +31,10 @@ steps
 Done, we're not doing images cuz it's a restuarant and I'm lazy
 6) Fill out page of normal content
 7) CSS! work on our css animation and styling skills.
-7a) external fonts
+7a) external fonts-skipping, too much work
 7b) animation for buttons
     7b1) I kinda want every time I click on a button that makes money, an animation of 
         mr krabs go money money money, or a gif of money burning on the site which 
         would be the user's wallet
-7c) I want to do the thing in apps where you click on something and it goes to that header, i think that's very cool
+7c) I want to do the thing in apps where you click on something and it goes to that header, i think that's very cool-also don't want to do
 

@@ -81,7 +81,7 @@ export function OrderPage() {
     }
   },[orders])
   return (
-    <>
+    <div className="order_page">
       <Navbar data={orders} />
       {/* {orders.map((item) => {
         return (
@@ -113,6 +113,6 @@ export function OrderPage() {
         );
       })}
       </div>
-    </>
+    </div>
   );
 }
