@@ -5,3 +5,13 @@ button {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 } */
+ .hide {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .75s ease-in .25s;
+  position: absolute
+}
+.hoverHide:hover + .hide {
+  opacity: 1;
+  visibility: visible;
+}

@@ -16,3 +16,11 @@ a {
 .navbar {
   background-color: #ff3b3b;
 }
+.Link {
+  transition: background-color .5s ease-in .1s;
+  border-radius:6px;
+  padding: 8px;
+}
+.Link:hover {
+  background-color: #ebeccf;
+}

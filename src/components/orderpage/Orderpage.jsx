@@ -2,6 +2,9 @@ import { Navbar } from "../navbar/Navbar";
 import { Item } from "./item/item";
 import { useEffect, useState } from "react";
 import './style.css'
+
+import Lottie from "lottie-react";
+import animation from "../../components/homepage/images/animations/sadHeart.json";
 export function OrderPage() {
   //items
   //entree mac&cheese
@@ -90,7 +93,14 @@ export function OrderPage() {
         );
       })} */}
       <h1>We got yummy food!</h1>
-      <button id="clear" type='button' onClick={clear}>Clear cart</button>
+      <button className="hoverHide" id="clear" type='button' onClick={clear}>Clear cart</button>
+      <Lottie
+          className="hide"
+          animationData={animation}
+          loop={true}
+          autoplay={true}
+          style={{ height: 300, width: 300 }}
+        />
       <div id='foods'>
       {menuItems.map((item) => {
         return (

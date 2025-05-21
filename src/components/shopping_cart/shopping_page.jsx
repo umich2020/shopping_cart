@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Item } from "./items/item.jsx";
 import { useNavigate } from "react-router-dom";
 
+
+
 import "./style.css";
 export function ShoppingPage() {
     const navigate = useNavigate()

@@ -32,3 +32,13 @@ body {
     background-color: #bdd8ec;
   margin: 0px;
 }
+.hide {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .75s ease-in .25s
+}
+.hoverHide:hover + .hide {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
